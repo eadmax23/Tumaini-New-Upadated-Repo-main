@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Tumaini Senior Secondary School | STEM</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="<b>Our Mission</> is to create well disciplined, independent and hardworking
+        people. God says For Lack of knowledge my people perish therefore Tumaini
+        Senior Secondary School is designed to provide quality and applicable
+        knowledge, with the aim of better living, minimizing poverty, diseases and
+        fighting ignorance.">
+    <meta name="keyword"
+        content="">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="/client/Tuma/photos/school.png" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700"
+        rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="/client/Tuma/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <link href="/client/Tuma/css/materialize.css" rel="stylesheet">
+    <link href="/client/Tuma/css/bootstrap.css" rel="stylesheet" />
+    <link href="/client/Tuma/css/style.css" rel="stylesheet" />
+    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="/client/Tuma/css/style-mob.css" rel="stylesheet" />
+
+    <style>
+           
+           
+@media  screen and  (max-width: 1400px) {
+    img.wewe{
+            /* height: 300px; */
+            max-height: 420px;
+            max-width: 100%;
+            
+
+    } 
+    
+}
+           
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- MOBILE MENU -->
+    <%- include("../clientPartials/headertwo.ejs") %>
+        <!--END HEADER SECTION-->
+
+        <!--SECTION START-->
+        <section>
+            <div class="head-2">
+                <div class="container">
+                    <div class="head-2-inn head-2-inn-padd-top">
+                        <h1>Photo Gallery</h1>
+                        <p>See more photos of Tumaini senior Secondary School</p>
+                        <div class="event-head-sub">
+                            <ul>
+                                <li>Photos</li>
+                                <li></li>
+                                <li>Location: At school and other places</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+        <section>
+            <div class="container com-sp pad-bot-70 pg-inn">
+                <div class="row">
+                    <div class="cor">
+
+                        <div class="col-md-12 portlets">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <% if (images.length > 0) {%>
+                                        <% images.forEach(img => { %>
+                                                <!-- style="max-width:  767.98px;" -->
+                                         
+                                              <div class="card mb-3"  style="margin-bottom: 13px; ">
+                                                <div class="row no-gutters">
+                                                  <div class="col-md-6 bot-gal h-gal ho-event-mob-bot-sp" style="margin-bottom: 15px;">
+                                                    <img style="max-width: 100%;" class="materialboxed wewe" data-caption="<%= img.eventname%>" src="<%= img.imagename %>" class="card-img" alt="...">
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                    <div class="card-body">
+                                                      <h3  class="card-title font-weight-bold" style="text-decoration: underline; font-weight: bold;" ><%= img.eventname%></h3>
+                                                      <p class="card-text font-weight-bold"><%= img.eventDescription%></p>
+                                                      <p class="card-text"><small class="text-dark" style="font-weight: bold;">Last updated <%= String(img.createdAt).slice(0, 16) %></small></p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+        
+                                       <%})%>
+                                       <%}%>
+                                          
+                                          </div>
+        
+                                </div>
+                            </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            
+
+        <!--SECTION END-->
+
+        <!--HEADER SECTION-->
+        <%- include("../clientPartials/footer.ejs") %>
+
+</body>
+
+
+</html>

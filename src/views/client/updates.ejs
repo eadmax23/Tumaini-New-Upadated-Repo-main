@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Tumaini Senior Secondary School | Staff Members</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="<b>Our Mission</> is to create well disciplined, independent and hardworking
+        people. God says For Lack of knowledge my people perish therefore Tumaini
+        Senior Secondary School is designed to provide quality and applicable
+        knowledge, with the aim of better living, minimizing poverty, diseases and
+        fighting ignorance.">
+    <meta name="keyword"
+        content="">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="/client/Tuma/photos/school.png" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700"
+        rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="/client/Tuma/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <link href="/client/Tuma/css/materialize.css" rel="stylesheet">
+    <link href="/client/Tuma/css/bootstrap.css" rel="stylesheet" />
+    <link href="/client/Tuma/css/style.css" rel="stylesheet" />
+    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="/client/Tuma/css/style-mob.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+    <!-- MOBILE MENU -->
+    <%- include("../clientPartials/headertwo.ejs") %>
+
+        <!--END HEADER SECTION-->
+
+
+        <section class="pop-cour">
+            <div class="container com-sp pad-bot-70">
+                <div class="row">
+                    <div class="con-title">
+                        <h2>News and <span>Updates</span></h2>
+                        <p>Get to know what current is happening.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+
+
+
+                            <% if(news) {%>
+                                <% news.slice(0, newsLength).forEach(newd=> { %>
+
+                                    <div class="home-top-cour">
+                                        <!--POPULAR COURSES IMAGE-->
+                                        <!-- <div class="col-md-3"> <img src="/client/Tuma/staff/5010.png" alt=""> </div> -->
+                                        <!--POPULAR COURSES: CONTENT-->
+                                        <div class="col-md-9 home-top-cour-desc">
+                                            <a href="/updates/<%= newd.id %>">
+                                                <h3>
+                                                    <%= newd.title %>.
+                                                </h3>
+                                            </a>
+                                            <h4>
+                                                <%= newd.snippet %>
+                                            </h4>
+                                            <p>Released On: <%= String(newd.createdAt).slice(0, 16) %>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <%})%>
+                                        <%}%>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <!--POPULAR COURSES-->
+                            <% if(news) {%>
+                                <% news.slice(newsLength, ).forEach(newd=> { %>
+
+                                    <div class="home-top-cour">
+                                        <!--POPULAR COURSES IMAGE-->
+                                        <!-- <div class="col-md-3"> <img src="/client/Tuma/staff/5010.png" alt=""> </div> -->
+                                        <!--POPULAR COURSES: CONTENT-->
+                                        <div class="col-md-9 home-top-cour-desc">
+                                            <a href="/updates/<%= newd.id %>">
+                                                <h3>
+                                                    <%= newd.title %>.
+                                                </h3>
+                                            </a>
+                                            <h4>
+                                                <%= newd.snippet %>
+                                            </h4>
+                                            <p>Released At: <%= String(newd.createdAt).slice(0, 16) %>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <%})%>
+                                        <%}%>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include("../clientPartials/footer.ejs") %>
+
+            <!--HEADER SECTION-->
+
+</body>
+
+
+</html>

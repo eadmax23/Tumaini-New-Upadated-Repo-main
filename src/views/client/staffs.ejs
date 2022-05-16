@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Tumaini Senior Secondary School | Staff Members</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="<b>Our Mission</> is to create well disciplined, independent and hardworking
+        people. God says For Lack of knowledge my people perish therefore Tumaini
+        Senior Secondary School is designed to provide quality and applicable
+        knowledge, with the aim of better living, minimizing poverty, diseases and
+        fighting ignorance.">
+    <meta name="keyword"
+        content="">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="/client/Tuma/photos/school.png" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700"
+        rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="/client/Tuma/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <link href="/client/Tuma/css/materialize.css" rel="stylesheet">
+    <link href="/client/Tuma/css/bootstrap.css" rel="stylesheet" />
+    <link href="/client/Tuma/css/style.css" rel="stylesheet" />
+    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="/client/Tuma/css/style-mob.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+    <!-- MOBILE MENU -->
+    <%- include("../clientPartials/headertwo.ejs") %>
+
+        <!--END HEADER SECTION-->
+
+
+        <section class="pop-cour">
+            <div class="container com-sp pad-bot-70">
+                <div class="row">
+                    <div class="con-title">
+                        <h2>Our <span>Staff</span></h2>
+                        <p>Get to know our staff members.</p>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                            <!--POPULAR COURSES-->
+                            
+                            <!--POPULAR COURSES-->
+                            <% if(staffs) {%>
+                                <% staffs.slice(0, divisionPoint).forEach(staff => { %>
+                            
+                                    <div class="home-top-cour">
+                                        <!--POPULAR COURSES IMAGE-->
+                                        <div class="col-md-3"> <img src="<%= staff.pictureiD %>" alt=""> </div>
+                                        <!--POPULAR COURSES: CONTENT-->
+                                        <div class="col-md-9 home-top-cour-desc">
+                                            <a href="/staffs">
+                                                <h3><%= staff.title %>. <%= staff.firstname %> <%= staff.lastname %></h3>
+                                            </a>
+                                            <h4><%= staff.roles %></h4>
+                                            <p><%= staff.subjects %> Teacher</p>
+                                        </div>
+                                    </div>
+                                
+                                <%})%>
+                            <%}%>
+                            <!--POPULAR COURSES-->
+                            
+
+                            <!--POPULAR COURSES-->
+                          
+
+                         
+                        
+                    </div>
+                    <div class="col-md-6">
+                        
+                            <% if(staffs) {%>
+                                <% staffs.slice(divisionPoint, staffs.length-1).forEach(staff => { %>
+                            
+                                    <div class="home-top-cour">
+                                        <!--POPULAR COURSES IMAGE-->
+                                        <div class="col-md-3"> <img src="<%= staff.pictureiD %>" alt=""> </div>
+                                        <!--POPULAR COURSES: CONTENT-->
+                                        <div class="col-md-9 home-top-cour-desc">
+                                            <a href="/staffs">
+                                                <h3><%= staff.title %>. <%= staff.firstname %> <%= staff.lastname %></h3>
+                                            </a>
+                                            <h4><%= staff.roles %></h4>
+                                            <p><%= staff.subjects %> Teacher</p>
+                                        </div>
+                                    </div>
+                                
+                                <%})%>
+                            <%}%>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--HEADER SECTION-->
+        <%- include("../clientPartials/footer.ejs") %>
+
+</body>
+
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Tumaini Senior Secondary School | Staff Members</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="<b>Our Mission</> is to create well disciplined, independent and hardworking
+        people. God says For Lack of knowledge my people perish therefore Tumaini
+        Senior Secondary School is designed to provide quality and applicable
+        knowledge, with the aim of better living, minimizing poverty, diseases and
+        fighting ignorance.">
+    <meta name="keyword"
+        content="">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="/client/Tuma/photos/school.png" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700"
+        rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="/client/Tuma/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <link href="/client/Tuma/css/materialize.css" rel="stylesheet">
+    <link href="/client/Tuma/css/bootstrap.css" rel="stylesheet" />
+    <link href="/client/Tuma/css/style.css" rel="stylesheet" />
+    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="/client/Tuma/css/style-mob.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+    <!-- MOBILE MENU -->
+    <%- include("../clientPartials/headertwo.ejs") %>
+
+        <!--SECTION START-->
+        <section>
+            <div class="container com-sp pad-bot-70 pg-inn">
+                <div class="row">
+                    <div class="cor">
+                        <div class="col-md-8">
+                            <!-- <div class="cor-mid-img">
+                            <img src="photos/discussion.jpg" alt="">
+                        </div> -->
+                            <div class="cor-con-mid">
+                                <div class="cor-p1">
+                                    <h2>
+                                        <%= obtained.title %>
+                                    </h2>
+                                </div>
+                                <div class="cor-p4">
+                                    <p>
+
+                                    </p>
+                                    <p>
+                                        <%= obtained.content %>
+                                    </p>
+                                    <h6>Updated on:<%= obtained.time %>
+                                    </h6>
+                                    <h5>Category:<%= obtained.category %>
+                                    </h5>
+                                    <h5>Location:<%= obtained.location %>
+                                    </h5>
+                                    <h6>Updated on:<%= String(obtained.createdAt).slice(0, 16) %>
+                                    </h6>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="cor-side-com">
+                            <div class="">
+                                <div class="de-left-tit">
+                                    <h4>IMPORTANT</h4>
+                                </div>
+                            </div>
+                            <div class="ho-event">
+                                <ul>
+                                    <% if(listedUpdates){ %>
+                                        <% listedUpdates.forEach(update=>{ %>
+                                            <li>
+                                                <div class="ho-ev-link ho-ev-link-full">
+
+                                                    <a href="/updates/<%= update.id%>">
+                                                        <h4><img src="/client/Tuma/photos/new.gif"><%= update.title%></h4>
+                                                    </a>
+                                                    <span>UPDATED ON:<%= String(update.createdAt).slice(0, 16) %></span>
+                                                </div>
+                                            </li>
+                                            <%})%>
+                                                <%}%>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+
+
+        <%- include("../clientPartials/footer.ejs") %>
+
+</body>
+
+
+</html>

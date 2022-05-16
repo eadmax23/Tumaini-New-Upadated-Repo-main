@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <title>Show Gallery </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <style>
+           
+           
+      @media  screen and  (max-width: 1400px) {
+          img{
+                  /* height: 300px; */
+                  max-height: 450px;
+                  max-width: 100%;
+                  
+      
+          } 
+          
+      }
+                 
+          </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+    <!-- container section start -->
+    <section id="container" class="">
+        <!--header start-->
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/header.ejs") %>
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/aside.ejs") %>
+        <!--sidebar end-->
+
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><i class="fa fa fa-bars"></i> Pages</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a href="/dashboard">Home</a></li>
+                            <li><i class="fa fa-bars"></i>Pages</li>
+                            <li><i class="fa fa-square-o"></i>Pages</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- page start-->
+                <div class="col-md-12 portlets">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-left">Gallery</div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <% if (images.length > 0) {%>
+                                <% images.forEach(img => { %>
+                            
+                                    <!-- <div class="card" style="width: 18rem;">
+                                        <img style="max-width: 100%; height: auto;" class="card-img-top" src="<%= img.imagename %>" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h5 class="card-title"><%= img.eventDescription%>"</h5>
+                                          <p class="card-text"></p>
+                                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                      </div> -->
+<!-- 
+                                      <div class="card text-center">
+                                        <div class="card-header">
+                                            <%= img.eventDescription%>"
+                                        </div>
+                                        <div class="card-body">
+                                          <h5 class="card-title">Special title treatment</h5>
+                                          <img style="max-width: 100%; height: auto;"  src="<%= img.imagename %>" >
+                                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                          2 days ago
+                                        </div>
+                                      </div> -->
+                                      <!-- 767.98px  540px-->
+                                      <div class="card mb-3" style="max-width:  767.98px;" style="margin-bottom: 13px; ">
+                                        <div class="row no-gutters">
+                                          <div class="col-md-8" style="margin-bottom: 30px;">
+                                            <img style="max-width: 100%; height: auto;" src="<%= img.imagename %>" class="card-img" alt="...">
+                                          </div>
+                                          <div class="col-md-4">
+                                            <div class="card-body">
+                                              <h3  class="card-title font-weight-bold" style="text-decoration: underline; font-weight: bold;" ><%= img.eventname%></h3>
+                                              <p class="card-text font-weight-bold"><%= img.eventDescription%></p>
+                                              <p class="card-text"><small class="text-dark" style="font-weight: bold;">Last updated <%= String(img.createdAt).slice(0, 16) %></small></p>
+                                              <div>
+                                                <a href="/api/image/image/<%= img.id %>" class="btn btn-primary" style="margin-bottom: 3px;">Update Image</a>
+                                                <a href="/api/image/deleteimage/<%= img.id %>" class="btn btn-primary" style="margin-bottom: 3px;">Delete Image</a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                               <%})%>
+                               <%}%>
+                                  
+                                  </div>
+
+                        
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <%- include("./partials/creator.ejs") %>
+    </section>
+    <!-- container section end -->
+    <!-- javascripts -->
+    <%- include("./partials/script.ejs") %>
+
+
+</body>
+
+</html>

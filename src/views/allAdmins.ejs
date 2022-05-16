@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <title>ALl Admins</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <style>
+        div.ik > h3> span{
+            color: crimson;
+            font-weight: bolder;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+    <!-- container section start -->
+    <section id="container" class="">
+        <!--header start-->
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/header.ejs") %>
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/aside.ejs") %>
+        <!--sidebar end-->
+
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><i class="fa fa fa-bars"></i> Admins Page</h3>
+                        
+                    </div>
+                </div>
+                <!-- page start-->
+                <div class="col-md-12 portlets">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-left">Admins</div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            
+                               <div class="container-fluid">
+                                  
+
+                                    
+                                        <div class="card">
+                                            <h1 class="card-header">Admins Names And Roles</h1>
+                                            <% if(Admins.length > 1) { %>
+                                                <% Admins.forEach(admin => { %>
+                                                    <div class="card-body ik" style="margin-bottom: 23px;">
+                                                        <h3><span>Name: </span><%= admin.username %></h3>
+                                                        <!-- /api/profile/update -->
+                                                        <h3><span>Role: </span><%= admin.role %></h3>
+                                                        <a href="/api/profile/showTheAdminPageForChanges"  class="btn btn-primary text-start">Delete This Admin</a>
+                                                        
+                                                    </div>
+                                                <%})%>                                               
+                                            <%}%>
+                                            </div>
+                                       
+                                  
+
+                                   
+                                   
+                              
+                               </div>
+                                  
+                                  </div>
+                            
+
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <%- include("./partials/creator.ejs") %>
+    </section>
+    <!-- container section end -->
+    <!-- javascripts -->
+    <%- include("./partials/script.ejs") %>
+
+
+</body>
+
+</html>

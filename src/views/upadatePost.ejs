@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <title>Update post</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+    <!-- container section start -->
+    <section id="container" class="">
+        <!--header start-->
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/header.ejs") %>
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/aside.ejs") %>
+        <!--sidebar end-->
+
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><i class="fa fa fa-bars"></i> Pages</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a href="/dashboard">Home</a></li>
+                            <li><i class="fa fa-bars"></i>Pages</li>
+                            <li><i class="fa fa-square-o"></i>Pages</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- page start-->
+                <div class="col-md-10 portlets">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-left">
+
+                                <% if(one.erro != undefined){ %>
+                                    <span><%= one.erro %>  THEN  </span>
+                        <% } %>
+                        <span>Update...</span>
+
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="padd">
+
+                                <div class="form quick-post">
+                                    <!-- Edit profile form (not working)-->
+                                    <form class="form-horizontal" action="/api/news/update/<%= one.id %>" method="post" id="form">
+                                        <!-- Title -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="title">Title</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="title" name="title" placeholder="Uzinduzi wa library.." maxlength="90" value="<%=one.title %>" required>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="snippet">Snippet</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" maxlength="300" id="snippet" placeholder="Weka summary fupi ya Tangazo lako lifupishe(90 -mananeno) " name="snippet" value="<%=one.snippet%>" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="content">Content</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control" id="content" name="content" placeholder="maelezo marefu kuhusu tangazo" required><%=one.content%></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- Cateogry -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Category</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control" name="category" required>
+                                              <option value=""><%=one.category %></option>
+                                              <option value="1">Academic</option>
+                                              <option value="2">Laboratory</option>
+                                              <option value="3">Library</option>
+                                              <option value="4">Sports & Games</option>
+                                              <option value="5">Services</option>
+                                              <option value="6">Project</option>
+                                              <option value="7">Partnership</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <!-- Participants -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Participants</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control" name="partcipants" required>
+                                              <option value=""><%=one.partcipants %></option>
+                                              <option value="1">Students</option>
+                                              <option value="2">Teachers</option>
+                                              <option value="3">Parents</option>
+                                              <option value="4">Teachers & Students</option>
+                                              <option value="5">Parents and Students</option>
+                                              <option value="6">Parents and Teachers</option>
+                                              <option value="7">Parents and School Board</option>
+                                              <option value="8">School Board</option>
+                                              <option value="9">All</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <!-- location -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="location">location</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="location" name="location" placeholder="mfano makuyuni" value="<%=one.location %>" required>
+                                            </div>
+                                        </div>
+                                        <!-- contacts -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="contact">contacts</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="contact" name="contact" value="<%=one.contact %>" placeholder="Phone number">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="time">Time</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="time" value="<%=one.time %>" placeholder="Example: 8:00AM - 10AM" name="time">
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Buttons -->
+                                        <div class="form-group">
+                                            <!-- Buttons -->
+                                            <div class="col-lg-offset-2 col-lg-9">
+                                                <button type="submit" class="btn btn-primary">Publish</button>
+                                                <button type="reset" class="btn btn-danger">Reset The Form</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                            </div>
+
+                            <div class="widget-foot">
+                                <!-- Footer goes here -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        <script defer src="/validatePost.js"></script>
+        <!--main content end-->
+        <%- include("./partials/creator.ejs") %>
+    </section>
+    <!-- container section end -->
+    <!-- javascripts -->
+    <%- include("./partials/script.ejs") %>
+
+
+</body>
+
+</html>

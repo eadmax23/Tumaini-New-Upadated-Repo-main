@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="/img/favicon.png">
+   
+
+    <title>Add Staff</title>
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <!-- container section start -->
+    <section id="container" class="">
+        <!--header start-->
+
+        <%- include("./partials/header.ejs") %>
+        <!--header end-->
+
+        <!--sidebar start-->
+        <%- include("./partials/aside.ejs") %>
+        <!--sidebar end-->
+
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><i class="fa fa fa-bars"></i> Pages</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a href="/dashboard">Home</a></li>
+                            <li><i class="fa fa-bars"></i>Pages</li>
+                            <li><i class="fa fa-square-o"></i>Pages</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- page start-->
+                <div class="col-md-9 portlets">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-left">Add/Update</div>
+                            <div class="widget-icons pull-right">
+                                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="padd">
+
+                                <div class="form quick-post">
+                                    <!-- Edit profile form (not working)-->
+                                    <div class="form-horizontal">
+                                        <form action="/api/info/createInfo" method="post" id="form" enctype="multipart/form-data">
+
+                                        
+                                        <!-- f_name -->
+                                        <div class="form-group ">
+                                            <label for="fname" class="control-label col-lg-2">First Name <span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" id="fname" name="firstname" minlength="3" maxlength="15" type="text" required />
+                                            </div>
+                                        </div>
+                                        <!-- l_name -->
+                                        <div class="form-group ">
+                                            <label for="lname" class="control-label col-lg-2">Last Name <span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control" id="lname" name="lastname" minlength="3" maxlength="15" type="text" required />
+                                            </div>
+                                        </div>
+                                        <!-- title -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Title</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control" name="title" id="title" required>
+                                              <option value="">- Choose title -</option>
+                                              <option value="1">MR.</option>
+                                              <option value="2">Madam</option>
+                                             
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <!--Email Address -->
+                                        <div class="form-group ">
+                                            <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control " id="email" name="email" type="email" max="24" placeholder="Example: yosia@gmail.com" required/>
+                                            </div>
+                                        </div>
+                                        <!--contacts -->
+                                        <div class="form-group ">
+                                            <label for="contact" class="control-label col-lg-2">Contacts <span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control " id="contact" name="contact" type="number"  minlength="10" maxlength="12" placeholder="255621861605" required />
+                                            </div>
+                                        </div>
+                                        <!-- city -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Level of education</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control" name="location" id="location" required>
+                                              <option value="">-  Education Level -</option>
+                                              <option value="1">Certificate</option>
+                                              <option value="2">Diploma</option>
+                                              <option value="3">Degree</option>
+                                
+                                             
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <!-- roles -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="roles">Role(s)</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control" id="roles" name="roles" placeholder="Eg. Headmaster"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- subjects -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="subjects">Subjects</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control" id="subjects" name="subjects" placeholder="Example: Physics"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- photos -->
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="photo">Upload Photo</label>
+                                            <div class="col-lg-10">
+                                                <input type="file" name="photo" id="photo" required> <br>
+                                            </div>
+                                        </div>
+
+                                        <!-- Buttons --> 
+                                        <div class="form-group">
+                                            <!-- Buttons -->
+                                            <div class="col-lg-offset-2 col-lg-9">
+                                                <button type="submit" class="btn btn-primary">Publish</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="widget-foot">
+                                <!-- Footer goes here -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        
+        <script defer src="/validateInfo.js"></script>
+        <!--main content end-->
+        <%- include("./partials/creator.ejs") %>
+        
+    <%- include("./partials/script.ejs") %>
+
+
+    
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Sports and Games | Tumaini Senior Secondary School</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="<b>Our Mission</> is to create well disciplined, independent and hardworking
+        people. God says For Lack of knowledge my people perish therefore Tumaini
+        Senior Secondary School is designed to provide quality and applicable
+        knowledge, with the aim of better living, minimizing poverty, diseases and
+        fighting ignorance.">
+    <meta name="keyword"
+        content="">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="/client/Tuma/photos/school.png" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700"
+        rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="/client/Tuma/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <link href="/client/Tuma/css/materialize.css" rel="stylesheet">
+    <link href="/client/Tuma/css/bootstrap.css" rel="stylesheet" />
+    <link href="/client/Tuma/css/style.css" rel="stylesheet" />
+    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="/client/Tuma/css/style-mob.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+    <!-- MOBILE MENU -->
+
+    <!--END HEADER SECTION-->
+    <%- include("../clientPartials/headertwo.ejs") %>
+
+
+    <!--SECTION START-->
+    <section>
+        <div class="container com-sp pad-bot-70 pg-inn">
+            <div class="row">
+                <div class="cor">
+                    <div class="col-md-8">
+                        <div class="cor-mid-img">
+                            <img src="/client/Tuma/photos/football.jpg" alt="">
+                        </div>
+                        <div class="cor-con-mid">
+                            <div class="cor-p1">
+                                <h2>Sport & Games</h2>
+                            </div>
+                            <div class="cor-p4">
+                                <p>Students are talented in various games including Football, netball, basketball and
+                                    handball. Every Monday and Friday from 4:00pm to 5:30pm, students are always
+                                    training. Saturday at 3:30pm to 5:30pm and on Sunday from 4:00pm to 5:30pm, students
+                                    are always in the field training.</p>
+                                <p>Our School is among the best schools that are supporting talents, this is because of
+                                    the records we hold. In 2018, we had two students that presented us in the national
+                                    level that is Utandita Gidabaso in netball and Godlisten Kiwale in Football. In
+                                    2019, we had three students in the national level that is Neema George, Ilhan
+                                    Mohamod and Godlisten Kiwale.</p>
+                                <p>We have been playing friendly match with our neighboring school example Lowassa,
+                                    Manyara, Nanja, Rift Valley and Orkeswa in basketball just to mention but a few.
+                                    Every Saturday of the end of three month, we conduct talent show, to promote talents
+                                    of our students.</p>
+
+                                <p>Tumaini Senior Secondary School is a home of sports and games which helps students
+                                    practice and become fit for sports. Tumaini Senior Secondary School is made up of
+                                    different sports ground such as Football, Netball, Basketball, Volleyball and
+                                    Handball field which helps the students practice and carry out class competition
+                                    among students.</p>
+
+                                <p>Sport and Games helps students to be very well equipped in terms of physical exercise
+                                    and body health. Students are able to participate in the district and regional
+                                    sports which helps students to involve in different international leveled games such
+                                    as basketball and volleyball. Students are allowed to participate in sports and
+                                    games every day evening in order to be well equipped for any interclass or
+                                    interregional competition. Due to that Tumaini Senior Secondary School is one of the
+                                    school chosen to participate in UMISETA 2019 and produced good basketball, football,
+                                    volleyball and netball player even till outside the region for competition.</p>
+
+                                <p>Most students are talented in both educational, sports and games talents. Talent day
+                                    is conducted in order to improve their talents in many ways such as singing,
+                                    dancing, games participation and even creativity and design thinking to come up with
+                                    a new things. Due to that, The School offers students with proper field and
+                                    equipment.</p>
+
+                                <p>Variety of sport and games facilities such as balls, pumps, sport shoes and sport
+                                    uniforms are supplied to all students. This gives the students motivation to
+                                    participate on different fields of sports. By doing that is a way to encourage the
+                                    students with variety talents. So that, they cannot give up and disappointed with
+                                    their talents as we all know talent pays. Due to availability of the ball and other
+                                    sport facilities, students attend the sport frequently for more exercise and
+                                    preparation of the competition among student. Due to the Tumaini Senior Secondary
+                                    School received gift after participating in UMISETA 2018, which includes balls and
+                                    sport uniform.</p>
+
+                                <p>Tumaini Senior Secondary School have the championship cups in each sport which is
+                                    present in the school. The championship cup represent the winners according in the
+                                    class competition leagues. After winning the championship cup, the winning class is
+                                    registered to the championship cup of that year. The competition takes place term
+                                    meaning twice a year which helps students struggle for the championship cup</p>
+
+                                <p>Morning run (Mchakamchaka) is also carries out to the students every morning on
+                                    Wednesday and Saturday in order to helps student to be well fit in terms of the body
+                                    health as compared to any way exercising the body. </p>
+
+                            </div>
+                        </div>
+                    </div>
+                   
+
+
+                    <div class="col-md-4">
+                        <div class="cor-side-com">
+                            <div class="">
+                                <div class="de-left-tit">
+                                    <h4>Sports Updates</h4>
+                                </div>
+                            </div>
+                            <div class="ho-event">
+                                <ul>
+                                    <% if(listedspoUpdates){ %>
+                                        <% listedspoUpdates.forEach(update=>{ %>
+                                            <li>
+                                                <div class="ho-ev-link ho-ev-link-full">
+
+                                                    <a href="/updates/<%= update.id%>">
+                                                        <h4><img src="/client/Tuma/photos/new.gif"><%= update.title%></h4>
+                                                    </a>
+                                                    <blockquote>
+                                                        <%= update.snippet%>
+                                                    </blockquote>
+                                                    <span>UPDATED ON:<%= String(update.createdAt).slice(0, 16) %></span>
+                                                </div>
+                                            </li>
+                                            <%})%>
+                                                <%}%>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+    <%- include("../clientPartials/footer.ejs") %>
+
+
+</body>
+
+
+</html>
